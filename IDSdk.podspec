@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.license           = { :type => 'Apache-2.0', :file => 'LICENSE' }
 
     s.platform          = :ios
-    s.source            = { :http => 'http://example.com/sdk/1.0.0/MySDK.zip' }
+    s.source            = { :github => 'https://github.vodafone.com/VFGroup-CPS-VFID/idsdk-ios-framework/tree/main/idsdk.xcframework' }
 
     xs.vendored_frameworks = "MyFramework.xcframework"
     s.platform = :ios
