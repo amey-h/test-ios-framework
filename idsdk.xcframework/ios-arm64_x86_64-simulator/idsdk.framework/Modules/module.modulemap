@@ -1,0 +1,4 @@
+framework module idsdk {
+  header "idsdk-Swift.h"
+  requires objc
+}

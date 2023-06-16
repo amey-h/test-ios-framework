@@ -1,0 +1,566 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios12.4-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -module-name idsdk
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import Alamofire
+import CommonCrypto
+import CoreData
+import CoreTelephony
+import Foundation
+import JOSESwift
+import Kingfisher
+import LocalAuthentication
+import Lottie
+import SecLibAnalytics
+import SecLibCore
+import SecLibUtilities
+import Security
+import Swift
+import SystemConfiguration
+import UIKit
+import UserNotifications
+import WebKit
+import _Concurrency
+import _StringProcessing
+extension idsdk.ServicesDB {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<idsdk.ServicesDB>
+  @objc @NSManaged dynamic public var challengeKey: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var clientDescription: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var clientName: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var created: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var expiresAt: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var loaRequired: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var message: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var nonce: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var policyURI: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var rememberMe: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var serviceAuthId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var serviceImgUrl: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var serviceName: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var serviceRequestId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var serviceSource: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var serviceStatus: Swift.Int32 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var serviceTime: Foundation.Date? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var tosURI: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var scopes: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+public struct IdSdkAuthConfiguration {
+  public init(authClientId: Swift.String, invalidAccessToken: Swift.String, pageLook: Swift.String, uiLocale: Swift.String, cookieCategories: Swift.String, cookieExtraDetails: Swift.String)
+}
+extension UIKit.UIWindow {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func motionEnded(_ motion: UIKit.UIEvent.EventSubtype, with event: UIKit.UIEvent?)
+}
+public struct IdSdkConfiguration {
+  public init(clientId: Swift.String, redirectUrl: Swift.String, channelId: Swift.String, acrValues: [Swift.String], scopes: [Swift.String], showWelcomeScreen: Swift.Bool, color: UIKit.UIColor, proofId: Swift.String, idsdkDebugOptions: idsdk.IdSdkDebugOptions, showCancelInBiometricScreen: Swift.Bool, market: Swift.String)
+}
+public struct IdSdkDebugOptions {
+  public init(logs: Swift.Bool = false, certificatePinning: Swift.Bool = true)
+}
+public struct AuthRequest : Swift.Codable {
+  public let authId: Swift.String, message: Swift.String, requestId: Swift.String
+  public let serviceDetails: idsdk.ServiceDetails
+  public let nonce: Swift.String
+  public let scopes: [idsdk.Scope]
+  public let expiresAt: Swift.Int
+  public let remoteDevice: Swift.String
+  public let rememberMe: Swift.Bool
+  public let challengeKey: Swift.String, loaRequired: Swift.String
+  public let created: Swift.Int
+  public let serviceName: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Scope : Swift.Codable {
+  public let scopeId: Swift.String, title: Swift.String, scopeDescription: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ServiceDetails : Swift.Codable {
+  public let clientDescription: Swift.String
+  public let tosURI: Swift.String, policyURI: Swift.String
+  public let clientName: Swift.String
+  public let logoURI: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public typealias AuthRequestArray = [idsdk.AuthRequest]
+extension UIKit.UIView {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var shadow: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var cornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var borderWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var borderColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var shadowRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var shadowOpacity: Swift.Float {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var shadowOffset: CoreFoundation.CGSize {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var shadowColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+}
+public protocol BottomPopupDelegate : AnyObject {
+  func bottomPopupViewLoaded()
+  func bottomPopupWillAppear()
+  func bottomPopupDidAppear()
+  func bottomPopupWillDismiss()
+  func bottomPopupDidDismiss()
+  func bottomPopupDismissInteractionPercentChanged(from oldValue: CoreFoundation.CGFloat, to newValue: CoreFoundation.CGFloat)
+}
+extension idsdk.BottomPopupDelegate {
+  public func bottomPopupViewLoaded()
+  public func bottomPopupWillAppear()
+  public func bottomPopupDidAppear()
+  public func bottomPopupWillDismiss()
+  public func bottomPopupDidDismiss()
+  public func bottomPopupDismissInteractionPercentChanged(from oldValue: CoreFoundation.CGFloat, to newValue: CoreFoundation.CGFloat)
+}
+public protocol BottomPopupAttributesDelegate : AnyObject {
+  var popupHeight: CoreFoundation.CGFloat { get }
+  var popupTopCornerRadius: CoreFoundation.CGFloat { get }
+  var popupPresentDuration: Swift.Double { get }
+  var popupDismissDuration: Swift.Double { get }
+  var popupShouldDismissInteractivelty: Swift.Bool { get }
+  var popupDimmingViewAlpha: CoreFoundation.CGFloat { get }
+  var popupShouldBeganDismiss: Swift.Bool { get }
+  var popupViewAccessibilityIdentifier: Swift.String { get }
+}
+public struct BottomPopupConstants {
+}
+extension UIKit.UIFont {
+  public static let loadAllFonts: ()
+  public static func registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
+}
+@objc @_Concurrency.MainActor(unsafe) open class BottomPopupNavigationController : UIKit.UINavigationController, idsdk.BottomPopupAttributesDelegate {
+  @_Concurrency.MainActor(unsafe) weak open var popupDelegate: (any idsdk.BottomPopupDelegate)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open var popupHeight: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupTopCornerRadius: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupPresentDuration: Swift.Double {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupDismissDuration: Swift.Double {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupShouldDismissInteractivelty: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupDimmingViewAlpha: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupShouldBeganDismiss: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupViewAccessibilityIdentifier: Swift.String {
+    get
+  }
+  @objc deinit
+}
+public enum HTTPMethod : Swift.String {
+  case OPTIONS, GET, HEAD, POST, PUT, PATCH, DELETE, TRACE, CONNECT
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum HTTPUploadSource {
+  case data(data: Foundation.Data)
+  case file(path: Swift.String)
+  case stream(stream: Foundation.InputStream)
+}
+public enum HTTPServiceResponse {
+  case success(data: Foundation.Data?, response: Foundation.URLResponse?)
+  case failure(error: (any Swift.Error)?, response: Foundation.URLResponse?)
+}
+public protocol HTTPServiceProtocol {
+  func execute(_ method: idsdk.HTTPMethod, URLString: Swift.String, parameters: Any?, headers: [Swift.String : Swift.String]?, responseHandler: @escaping ((_ response: idsdk.HTTPServiceResponse) -> Swift.Void))
+}
+extension idsdk.HTTPServiceProtocol {
+  public func execute(_ method: idsdk.HTTPMethod, URLString: Swift.String, parameters: Any? = nil, headers: [Swift.String : Swift.String]? = nil, responseHandler: @escaping ((_ response: idsdk.HTTPServiceResponse) -> Swift.Void))
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BottomPopupViewController : UIKit.UIViewController, idsdk.BottomPopupAttributesDelegate {
+  @_Concurrency.MainActor(unsafe) weak open var popupDelegate: (any idsdk.BottomPopupDelegate)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open var popupHeight: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupTopCornerRadius: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupPresentDuration: Swift.Double {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupDismissDuration: Swift.Double {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupShouldDismissInteractivelty: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupDimmingViewAlpha: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupShouldBeganDismiss: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) open var popupViewAccessibilityIdentifier: Swift.String {
+    get
+  }
+  @objc deinit
+}
+extension UIKit.UINavigationController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var childForStatusBarStyle: UIKit.UIViewController? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var childForStatusBarHidden: UIKit.UIViewController? {
+    @objc get
+  }
+}
+extension UIKit.UITabBarController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var childForStatusBarStyle: UIKit.UIViewController? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var childForStatusBarHidden: UIKit.UIViewController? {
+    @objc get
+  }
+}
+public struct GetAuthorizeUrlResponseModel : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum SmapiType : Swift.String, Swift.CustomStringConvertible {
+  case appInstall
+  case appOpen
+  case checkBoxTermsAndPrivacy
+  case termsAndPrivacyAccepted
+  case termsAndConditionsOpened
+  case privacyPolicyOpened
+  case welcomeAccept
+  case permissionManageCallsContinue
+  case permissionPopUpManageCalls
+  case onBoardingLoginDisplayed
+  case onBoardingLoginGetStarted
+  case onBoardingKycDisplayed
+  case onBoardingKycGetStarted
+  case onBoardingSelfCareDisplayed
+  case onBoardingSelfCareGetStarted
+  case firstGuestDashboardDisplayed
+  case firstAuthenticatedDashboardDisplayed
+  case settingsAboutUs
+  case settingsPrivacyPolicy
+  case settingsTermsAndConditions
+  case settingsLogOut
+  case settingsLogOutConfirm
+  case authorizeAccept
+  case authorizeDeny
+  case authorizeCancel
+  case authorizeSuccess
+  case authorizeFail
+  case idInit
+  case idAuthorizePush
+  case idLogout
+  case transifexDownload
+  case termsAndConditionsDownload
+  case privacyPolicyDownload
+  case appConfigDownload
+  case userInfoDownload
+  case navBarQR
+  case navBarHelp
+  case navBarAbout
+  case dashboardNotificationsAlert
+  case dashboardPendingRequests
+  case simSwapDetected
+  case deeplinkInitiated
+  case deeplinkBiometricAuthorize
+  case deeplinkWithoutBiometricAuthorize
+  case idInitNoInternet
+  case idInitSDKInitializeStart
+  case idInitProofIdFailed
+  case idInitProofIdException
+  case idInitClientSetupPublicKeyFailed
+  case idInitSetupStartFailed
+  case idInitSetupStartResponseEmpty
+  case idInitSetupCompleteFailed
+  case idInitSetupCompleteResponseEmpty
+  case idInitSDKIDGeneratedSuccess
+  case idInitSetupCompleteErrorJWT
+  case idInitSetupCompleteProcessError
+  case idInitSDKInitializeSuccess
+  case idAuthIdgatewayWebviewOpened
+  case idAuthIdgatewayWebviewCanceled
+  case idAuthIdgatewayWebviewFailed
+  case idAuthIdgatewayWebviewRedirectFailed
+  case idAuthAuthenticateCall
+  case idAuthAuthenticateWorker
+  case idAuthAuthClientIdFailed
+  case idAuthAuthClientIdNotSame
+  case idAuthAccessTokenInvalid
+  case idAuthAccessTokenExpired
+  case idAuthAccessTokenValid
+  case idAuthAccessTokenNotFound
+  case idAuthRefreshTokenRequestExpired
+  case idAuthAuthenticationFailed
+  case idAuthFetchAuthorizeUrl
+  case idAuthGetAuthorizeUrlWorker
+  case idAuthAuthorizeUrlGenerated
+  case idAuthAuthorizeUrl
+  case idAuthSdkIdAuthTrxId
+  case idAuthFetchAuthorizeUrlFailed
+  case idAuthFetchAuthorizeUrlException
+  case idAuthAccessTokenRequest
+  case idAuthAccessTokenFetchFailed
+  case idAuthAccessTokenFetchResponseEmpty
+  case idAuthAccessTokenFailedException
+  case idAuthAccessTokenGenerated
+  case idAuthAccessTokenGeneratedRefresh
+  case idRefreshTokenCreated
+  case idAuthRefreshTokenRequest
+  case idAuthRefreshTokenCall
+  case idAuthRefreshTokenNull
+  case idAuthRefreshTokenFetchFailed
+  case idAuthRefreshTokenFetchResponseEmpty
+  case idAuthRefreshTokenFailedException
+  case idLogoutRequest
+  case idLogoutSuccess
+  case idLogoutFailed
+  case idLogoutFailedException
+  case idLogoutSuccessClearKeys
+  case idAuthNoInternet
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SmapiPage : Swift.String {
+  case notAvailable
+  case welcome
+  case permissionManageCalls
+  case onBoarding
+  case authorize
+  case termsAndConditions
+  case privacyPolicy
+  case dashboard
+  case settings
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SmapiSubPage : Swift.String {
+  case notAvailable
+  case onBoardingKyc
+  case onBoardingSelfCare
+  case onBoardingLogin
+  case profileImageChooser
+  case navBar
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SmapiData {
+}
+public enum SmapiValue {
+}
+public enum EnvironmentType : Swift.String {
+  case staging, stagingref, prod
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum BiometricCheck : Swift.String {
+  case NotNeed
+  case Suppoted
+  case Disabled
+  case NotEnrolled
+  case None
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc(ServicesDB) public class ServicesDB : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class ResultClass : ObjectiveC.NSObject {
+  public var code: Swift.Int
+  public var message: Swift.String
+  public var biometricType: Swift.String
+  public var biometricStatus: Swift.String
+  public var href: Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class IdSdk {
+  public static let shared: idsdk.IdSdk
+  final public var getSdkVersion: Swift.String {
+    get
+  }
+  final public var getSdkId: Swift.String {
+    get
+  }
+  final public var getHrefURL: Swift.String {
+    get
+  }
+  final public var initStatus: Swift.Bool {
+    get
+  }
+  final public func authenticate(onViewController: UIKit.UIViewController, authConfig: idsdk.IdSdkAuthConfiguration, completion: @escaping (Swift.String?, Foundation.NSError?, idsdk.ResultClass) -> Swift.Void)
+  final public func refreshAPI(onViewController: UIKit.UIViewController, completion: @escaping (Swift.String?, Foundation.NSError?, idsdk.ResultClass) -> Swift.Void)
+  final public func setup(forEnvironment envType: idsdk.EnvironmentType)
+  final public func configureAccess(color: UIKit.UIColor, biometricEnabled: Swift.Bool, welcomeScreenVisible: Swift.Bool, cancelInBiometricScreen: Swift.Bool)
+  final public func initailizeSdk(onViewController: UIKit.UIViewController, initConfig: idsdk.IdSdkConfiguration, completion: @escaping ((any Swift.Error)?, idsdk.ResultClass) -> Swift.Void)
+  final public func eraseAccess()
+  final public func logoutSdk(showConfirmationScreen onViewController: UIKit.UIViewController?, completion: @escaping (idsdk.ResultClass?, Foundation.NSError?) -> Swift.Void)
+  final public func getAllAuthorizeHistory(_ histroyCompletion: @escaping ([[Swift.String : Any]]?, (any Swift.Error)?) -> Swift.Void)
+  final public func showTutorialScreen(onViewController: UIKit.UIViewController)
+  final public func showTutorialPN(onViewController: UIKit.UIViewController)
+  final public func showTutorialQR(onViewController: UIKit.UIViewController)
+  final public func biometricStatus(_ completion: @escaping (idsdk.ResultClass) -> Swift.Void)
+  final public func enableBiometrics(_ completion: @escaping (idsdk.ResultClass) -> Swift.Void)
+  final public func disableBiometrics(_ completion: @escaping (idsdk.ResultClass) -> Swift.Void)
+  final public func enableEventTracking()
+  final public func disableEventTracking()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class UserCanceledError : Swift.Error {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AaasServerError : Swift.Error {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TimeoutError : Swift.Error {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class ShowUiError : Swift.Error {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NotInitializedError : Swift.Error {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class NotConnectedToInternetError : Swift.Error {
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class AlreadyInitializedError : Swift.Error {
+  @objc deinit
+}
+extension idsdk.HTTPMethod : Swift.Equatable {}
+extension idsdk.HTTPMethod : Swift.Hashable {}
+extension idsdk.HTTPMethod : Swift.RawRepresentable {}
+extension idsdk.SmapiType : Swift.Equatable {}
+extension idsdk.SmapiType : Swift.Hashable {}
+extension idsdk.SmapiType : Swift.RawRepresentable {}
+extension idsdk.SmapiPage : Swift.Equatable {}
+extension idsdk.SmapiPage : Swift.Hashable {}
+extension idsdk.SmapiPage : Swift.RawRepresentable {}
+extension idsdk.SmapiSubPage : Swift.Equatable {}
+extension idsdk.SmapiSubPage : Swift.Hashable {}
+extension idsdk.SmapiSubPage : Swift.RawRepresentable {}
+extension idsdk.EnvironmentType : Swift.Equatable {}
+extension idsdk.EnvironmentType : Swift.Hashable {}
+extension idsdk.EnvironmentType : Swift.RawRepresentable {}
+extension idsdk.BiometricCheck : Swift.Equatable {}
+extension idsdk.BiometricCheck : Swift.Hashable {}
+extension idsdk.BiometricCheck : Swift.RawRepresentable {}
